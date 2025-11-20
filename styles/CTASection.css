@@ -1,0 +1,235 @@
+@font-face {
+  font-family: 'Forum';
+  src: url('/fonts/Forum-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DarkerGrotesque';
+  src: url('/fonts/DarkerGrotesque-VariableFont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base container */
+.cta-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #5C5C5C;
+  overflow: hidden;
+}
+
+.cta-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section__container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-section__title {
+  color: #FFF;
+  text-align: center;
+  font-family: "Forum";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; 
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.cta-section__text {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: "DarkerGrotesque";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; 
+  letter-spacing: 0.36px;
+}
+
+.cta-section__cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  margin-top: 24px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.cta-canvas{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Demi-cercle gauche */
+.cta-section__cta::before {
+  content: '';
+  position: absolute;
+  left: -150px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 280px;
+  background-color: #FFF;
+  border-radius: 150px 0 0 150px;
+  border: 2px solid #030303;
+  box-sizing: border-box;
+}
+
+/* Demi-cercle droit */
+.cta-section__cta::after {
+  content: '';
+  position: absolute;
+  right: -150px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 280px;
+  background-color: #FFF;
+  border-radius: 0 150px 150px 0;
+  border: 2px solid #030303;
+  box-sizing: border-box;
+}
+
+.cta-section__cta-text {  
+  color: #030303;
+  text-align: center;
+  font-family: "DarkerGrotesque";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; 
+  letter-spacing: 0.2px;
+  transition: opacity 0.3s ease;
+}
+
+.cta-section__cta-text:hover {
+  opacity: 0.7;
+}
+
+/* Badge */
+.cta-section__badge {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 24px;
+  backdrop-filter: blur(3px);
+}
+
+.cta-section__badge p {
+  color: #C4C4C4;
+  font-family: "DarkerGrotesque";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .cta-section {
+    height: auto;
+    padding: 60px 40px;
+    gap: 40px;
+  }
+
+  .cta-section__title {
+    font-size: 40px;
+    width: 90%;
+  }
+
+  .cta-section__text {
+    font-size: 16px;
+  }
+
+  .cta-section__cta {
+    width: 220px;
+    height: 220px;
+    margin-top: 16px;
+  }
+
+  .cta-section__cta::before,
+  .cta-section__cta::after {
+    width: 110px;
+    height: 220px;
+    left: -110px;
+    right: auto;
+    border-radius: 110px 0 0 110px;
+  }
+
+  .cta-section__cta::after {
+    left: auto;
+    right: -110px;
+    border-radius: 0 110px 110px 0;
+  }
+
+  .cta-section__cta-text {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .cta-section__container {
+    gap: 16px;
+  }
+
+  .cta-section__title {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .cta-section__text {
+    font-size: 14px;
+  }
+
+  .cta-section__cta {
+    width: 180px;
+    height: 180px;
+    margin-top: 12px;
+  }
+
+  .cta-section__cta::before,
+  .cta-section__cta::after {
+    display: none;
+  }
+
+  .cta-section__cta-text {
+    font-size: 14px;
+  }
+
+  .cta-section__badge p {
+    font-size: 12px;
+  }
+}

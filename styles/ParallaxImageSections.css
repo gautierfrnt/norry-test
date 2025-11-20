@@ -1,0 +1,152 @@
+/* ====================================
+   PARALLAX IMAGE SECTIONS (10-13)
+   Sections avec images en parallax
+   ==================================== */
+
+@font-face {
+  font-family: 'Forum';
+  src: url('/fonts/Forum-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DarkerGrotesque';
+  src: url('/fonts/DarkerGrotesque-VariableFont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base commune pour les sections parallax */
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #030303;
+  background-image: url("/images/filter-gothic.png");
+}
+
+/* Container principal */
+.parallax-section__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Titre */
+.parallax-section__title {
+  font-family: 'Forum';
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 110%; 
+  text-transform: uppercase;
+  color: #FFF;
+  overflow: hidden;
+  width: 70%;
+}
+
+/* Images - Positions spécifiques */
+.parallax-section__image {
+  position: absolute;
+}
+
+/* Mondes - Image 1 */
+.parallax-section.mondes .parallax-section__image {
+  top: 50%;
+  left: 60%;
+}
+
+/* Architectures - Image 2 */
+.parallax-section.architectures .parallax-section__image {
+  top: 20%;
+  left: 20%;
+}
+
+/* Projets - Image 3 */
+.parallax-section.projects .parallax-section__image {
+  top: 23%;
+  left: 68%;
+}
+
+/* Interactions - Image 4 */
+.parallax-section.interactions .parallax-section__image {
+  top: 25%;
+  left: 15%;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .parallax-section {
+    height: auto;
+    padding: 60px 40px;
+  }
+
+  .parallax-section__container {
+    gap: 16px;
+    padding-bottom: 200px;
+  }
+
+  .parallax-section__title {
+    font-size: 40px;
+    width: 95%;
+  }
+
+  .parallax-section__image {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 2 !important;
+    margin-top: 40px;
+  }
+
+  .parallax-section.mondes .parallax-section__image,
+  .parallax-section.architectures .parallax-section__image,
+  .parallax-section.projects .parallax-section__image,
+  .parallax-section.interactions .parallax-section__image {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-section {
+    padding: 40px 20px;
+  }
+
+  .parallax-section__container {
+    gap: 12px;
+    padding-bottom: 150px;
+  }
+
+  .parallax-section__title {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .parallax-section__image {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin-top: 30px;
+  }
+
+  .parallax-section__image img {
+    max-width: 100%;
+    height: auto;
+  }
+}

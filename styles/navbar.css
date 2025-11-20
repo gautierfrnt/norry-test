@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'DarkerGrotesque';
+  src: url('/fonts/DarkerGrotesque-VariableFont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+nav{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 48px;
+    font-family: "DarkerGrotesque", sans-serif;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 72px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    color: #E1E1E1;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.32px;
+}
+
+.contact-button a {
+    display: flex;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 56px;
+    background: radial-gradient(60.53% 111.67% at 50.31% 0%, rgba(58, 58, 58, 0.80) 0%, rgba(26, 26, 26, 0.80) 100%);
+    backdrop-filter: blur(3px);
+    color: white;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    padding: 24px 32px;
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 48px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .contact-button a {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    padding: 16px;
+    gap: 20px;
+    position: static;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .contact-button {
+    width: 100%;
+  }
+
+  .contact-button a {
+    padding: 10px 16px;
+    font-size: 12px;
+    width: 100%;
+  }
+}
