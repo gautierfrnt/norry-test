@@ -15,8 +15,12 @@ const CTASection = () => {
     const ctx = canvas.getContext('2d');
     
     const updateCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // Utiliser clientWidth/Height pour plus de fiabilité
+      const width = window.innerWidth || document.documentElement.clientWidth;
+      const height = window.innerHeight || document.documentElement.clientHeight;
+      
+      canvas.width = width;
+      canvas.height = height;
       drawCircles();
     };
 
@@ -58,10 +62,17 @@ const CTASection = () => {
       ctx.fill();
     };
 
-    updateCanvasSize();
+    // Initialiser avec un délai pour s'assurer que le DOM est prêt
+    setTimeout(updateCanvasSize, 100);
 
+    // Ajouter les listeners pour le resize
     window.addEventListener('resize', updateCanvasSize);
-    return () => window.removeEventListener('resize', updateCanvasSize);
+    window.addEventListener('orientationchange', updateCanvasSize);
+
+    return () => {
+      window.removeEventListener('resize', updateCanvasSize);
+      window.removeEventListener('orientationchange', updateCanvasSize);
+    };
   }, []);
 
   return (
