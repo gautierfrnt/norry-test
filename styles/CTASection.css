@@ -81,9 +81,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  pointer-events: none;
 }
+
 
 /* Demi-cercle gauche */
 .cta-section__cta::before {

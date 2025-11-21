@@ -16,11 +16,11 @@ const CTASection = () => {
     
     const updateCanvasSize = () => {
       // Utiliser clientWidth/Height pour plus de fiabilité
-      const width = window.innerWidth || document.documentElement.clientWidth;
-      const height = window.innerHeight || document.documentElement.clientHeight;
-      
-      canvas.width = width;
-      canvas.height = height;
+      const rect = canvas.parentElement.getBoundingClientRect();
+
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+
       drawCircles();
     };
 
